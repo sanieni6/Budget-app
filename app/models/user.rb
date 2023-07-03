@@ -8,16 +8,15 @@ class User < ApplicationRecord
   has_many :operations, foreign_key: :author_id
 
   validates :name, presence: true
+  validates :email, presence: true
+  validates :password, presence: true
 
-  def totalAmount
+  def total_amount
     total = []
-    mount = 0
     groups.each do |group|
-      operations = group.group_operations.where(user_id: id)
-      operations.each do |operation|
-        mount += operation.amount
-      end
-      total << { group: group, amount: mount }
+      g_operations = group.group_operations.where(group_id: group.id)
+      amount = g_operations.joins(:operation).sum(:amount)
+      total << { group:, amount: }
     end
     total
   end
