@@ -1,0 +1,14 @@
+<div class="main-container">
+    <div class="groups-container">
+        <h1 class="page-title">Categories</h1>
+        <% @groups.each do |group| %>
+            <div class="group">
+                <div class="group-image">
+                    <%# <%= image_tag group.image_url(:thumb) %> %>
+                    <h1> <%= group.name %> </h1>
+                </div>
+            </div>
+        <% end %>
+        
+    </div>
+</div>
