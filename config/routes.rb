@@ -4,4 +4,12 @@ Rails.application.routes.draw do
   #root to: "home#index"
   # Defines the root path route ("/")
   # root "articles#index"
+  if user_signed_in?
+    root "groups#index"
+  else
+    root "sign_in#index"
+  end
+  resources :groups, only: [:index, :show,  :new, :create, :destroy] do
+    resources :operations, only: [:index, :new, :create, :destroy]
+  end
 end
