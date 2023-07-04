@@ -1,0 +1,21 @@
+<div class="main-container">
+    <div class="groups-container">
+        <%= render 'shared/header', name: 'Transactions' %>
+        <div class="total_amount">
+            <h1> <%= @group.name %> </h1>
+            <p> <%= @group.total_amount %> </p>
+        </div>
+        <% @operations.each do |operation| %>
+            <ul class="group">
+                    <li class="group-image">
+                        <div class="main-group-data">
+                            <h1> <%= operation.name %> </h1>
+                            <p> <%= operation.created_at %> </p>
+                        </div>
+                        <p class=group-total><%=operation.amount%></p>
+                    </li>
+            </ul>
+        <% end %>
+    </div>
+    <button class="new transaction"> <%= link_to 'New Transaction', new_group_operation_path(@group) %> </button>
+</div>
