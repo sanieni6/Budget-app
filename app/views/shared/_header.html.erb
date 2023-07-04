@@ -1,4 +1,5 @@
-<header class="header">
-<%= link_to 'back', root_path, class: 'header-button', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
-<h1 class="header__title"><%=name%></h1>
+<header class="flex flex-row bg-main w-full p-1 text-white justify-between">
+<%= link_to '', root_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
+<h1 class="font-nova text-lg"><%=name%></h1>
+<span class="mr-1"></span>
 </header>
