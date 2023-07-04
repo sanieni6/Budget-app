@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   #   root "groups#index"
   # else
   #end
-  root "groups#index"
+  #root "groups#index"
+  root to: "main#index"
   resources :groups, path: 'category', only: [:index, :show,  :new, :create, :destroy] do
     resources :operations, only: [:index, :new, :create, :destroy]
   end

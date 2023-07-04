@@ -1,14 +1,18 @@
 <div class="main-container">
     <div class="groups-container">
-        <h1 class="page-title">Categories</h1>
+        <%= render 'shared/header', name: 'Categories' %>
         <% @groups.each do |group| %>
-            <div class="group">
-                <div class="group-image">
-                    <%# <%= image_tag group.image_url(:thumb) %> %>
-                    <h1> <%= group.name %> </h1>
+            <ul class="group">
+                <li class="group-image">
+                <div class="main-group-data">
+                    <img src=<%=group.icon %>>
+                    <%= link_to group.name, group, class: 'group-link' %>
                 </div>
-            </div>
+                <p class=group-total><%=group.total_amount%></p>
+                </li>
+            </ul>
         <% end %>
+        <button class="new category"> <%= link_to 'New Category', new_group_path %> </button>
         
     </div>
 </div>

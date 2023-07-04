@@ -5,5 +5,7 @@ class Ability
     return unless user.present?
 
     can :manage, :all, user_id: user.id
+
+    can :index, MainController, public: true
   end
 end
