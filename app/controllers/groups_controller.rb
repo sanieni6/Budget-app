@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   # load_resource through: :current_user
 
   def index
-    @groups = Group.all
+    @groups = Group.where(author_id: current_user.id)
   end
 
   def show

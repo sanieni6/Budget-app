@@ -1,0 +1,25 @@
+<%= form_with model: form_object, url: form_url, class:"form" do |form| %>
+  
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+  <%if type == "category"%>
+    <div class="field">
+        <%= form.label :icon %>
+        <%= form.text_field :icon, required: true %>
+    </div>
+    <% else %>
+    <div class="field">
+        <%= form.label :amount %>
+        <%= form.number_field :amount, required: true, step: '0.01' %>
+    </div>
+    <div class="field">
+        <%= form.label :group_id %>
+        <%= form.collection_select :group_id, Group.all, :id, :name %>
+    </div>
+    <% end %>
+  <div class="actions">
+    <%= form.submit "Save" %>
+  </div>
+<% end %>

@@ -1,14 +1,2 @@
 <%= render 'shared/header', name: 'New Category' %>
-<%= form_with model: @group, url: groups_path, class:"form" do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, required: true %>
-  </div>
-    <div class="field">
-        <%= form.label :icon %>
-        <%= form.text_field :icon, required: true %>
-    </div>
-  <div class="actions">
-    <%= form.submit "Save" %>
-  </div>
-<% end %>
+<%= render 'shared/form', form_object: @group, form_url: groups_path, type: "category" %>
