@@ -21,6 +21,8 @@ module.exports = {
         'main': '#3778c2',
         'second': '#5fb523',
         'text': '#434b54',
+        'text-light': '#f5f6f8',
+        'text-m': '#86898e',
       },
     },
   },
