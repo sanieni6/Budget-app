@@ -1,8 +1,13 @@
-<%= render 'shared/header', name: 'BudgetApp' %>
-<% if user_signed_in? %>
-        <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"signup-button"%>
-    <% else %>
-        <li> <%= link_to "Login", new_user_session_path, class:"signup-button" %></li>
-        |
-        <li> <%= link_to "Register", new_user_registration_path, class:"signup-button" %></li>
-    <% end %>
+<%= render 'shared/header', name: 'SmartWallet' %>
+<div class="flex flex-col place-content-center w-full items-center mt-3 flex-grow relative">
+<h1 class="font-nova text-4xl w-max mb-28">SmartWallet</h1>
+    <ul class="list-none flex flex-col justify-center items-center w-full absolute bottom-5">  
+        <% if user_signed_in? %>
+            <li class="w-10/12 flex place-content-center "> <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"w-full bg-main text-center p-2 text-white rounded font-nova"%></li>
+        <% else %>
+            <li class="w-10/12 flex place-content-center "> <%= link_to "Login", new_user_session_path, class:"w-full bg-main text-center p-2 text-white rounded font-nova" %></li>
+            <li class="w-10/12 flex place-content-center "> <%= link_to "Register", new_user_registration_path, class:"w-full text-center p-2 text-text font-nova" %></li>
+        <% end %>
+    </ul>
+
+</div>

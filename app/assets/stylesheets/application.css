@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: 'proxima-nova-bold';
+  src: url('../fonts/proximanova-bold.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'proxima-nova-light';
+  src: url('../fonts/proximanova-light.otf') format('otf');
+}
+
+.back-image {
+  width: 25px;
+  height: 25px;
+  color: #fff;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.new_user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

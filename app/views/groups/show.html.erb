@@ -1,21 +1,25 @@
-<div class="main-container">
-    <div class="groups-container">
-        <%= render 'shared/header', name: 'Transactions' %>
-        <div class="total_amount">
-            <h1> <%= @group.name %> </h1>
-            <p> <%= @group.total_amount %> </p>
+<%= render 'shared/header', name: 'Transactions' %>
+<div class="w-full flex flex-col justify-center items-center">
+        <div class="bg-main flex flex-col items-center justify-items-center w-full">
+            <p class="text-white font-nova">Most recent</p>
+            <span class="text-white font-nova text-2xl">.</span>
         </div>
-        <% @operations.each do |operation| %>
-            <ul class="group">
-                    <li class="group-image">
-                        <div class="main-group-data">
-                            <h1> <%= operation.name %> </h1>
-                            <p> <%= operation.created_at %> </p>
-                        </div>
-                        <p class=group-total><%=operation.amount%></p>
-                    </li>
-            </ul>
-        <% end %>
-    </div>
-    <button class="new transaction"> <%= link_to 'New Transaction', new_group_operation_path(@group) %> </button>
+        <div class="bg-white flex flex-row justify-between w-full p-3">
+            <h1 class="text-text-m font-nova font-bold"> <%= @group.name %> </h1>
+            <p class="font-nova font-bold"> $<%= @group.total_amount %> </p>
+        </div>
+        <ul class="w-full flex flex-col items-center justify-items-center gap-3 mt-3">
+            <% @operations.each do |operation| %>
+                
+                        <li class="w-11/12 bg-white flex flex-row items-start p-3 gap-3 relative">
+                            <div class="flex flex-col gap-5">
+                                <h1 class="text-text font-nova"> <%= operation.name %> </h1>
+                                <p class="text-text-m font-extralight font-nova text-sm"> <%= operation.created_at.strftime('%d %B %Y') %> </p>
+                            </div>
+                            <p class=" font-nova font-bold ml-5 absolute top-3 right-3">$<%=operation.amount%></p>
+                        </li>
+                
+            <% end %>
+            <button class="w-11/12 bg-main text-center p-2 text-white rounded font-nova mt-3 mb-3"> <%= link_to 'New Transaction', new_group_operation_path(@group) %> </button>
+        </ul>
 </div>

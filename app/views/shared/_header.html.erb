@@ -1,4 +1,20 @@
-<header class="header">
-<%= link_to 'back', root_path, class: 'header-button', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
-<h1 class="header__title"><%=name%></h1>
+<header class="flex flex-row bg-main w-full p-1 text-white justify-between items-center">
+<% if name == 'Categories' %>
+    <img src=<%=asset_path('bar.svg')%> class="w-5 h-5 ml-1">
+<% else %>
+    <%= link_to '', root_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
+<% end %>
+<h1 class="font-nova text-lg flex flex-row items-center">
+<img src=<%=asset_path('wallet.svg')%> class="w-5 h-5"><%=name%></h1>
+<% if name == 'LOGIN' %>
+    <%= action.submit "Log in", class:"bg-main text-white rounded p-1 mr-1" %>
+<% elsif name == 'REGISTER' %>
+    <%= action.submit "Sign up", class:"bg-main text-white rounded p-1 mr-1" %>  
+<% elsif name == 'Categories' || name == 'Transactions' %>
+    <img src=<%=asset_path('search.svg')%> class="w-5 h-5">
+<% elsif name == 'New Category' || name == 'New Transaction' %>
+    <%= action.submit "Save", class:"bg-main text-white rounded p-1 mr-1" %>
+<% else %>
+    <span class="mr-1"></span>
+<% end %>
 </header>
