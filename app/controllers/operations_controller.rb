@@ -10,7 +10,7 @@ class OperationsController < ApplicationController
       @group_operation = GroupOperation.new(group_id: params[:operation][:group_id], operation_id: @operation.id)
       if @group_operation.save
         flash[:notice] = 'Operation created successfully'
-        redirect_to groups_path
+        redirect_to group_path(params[:operation][:group_id])
       else
         flash[:alert] = 'Operation not created'
         render :new
