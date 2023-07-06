@@ -1,8 +1,6 @@
 <%= render 'shared/header', name: 'Categories' %>
 <div class="w-full flex flex-col justify-center items-center">
-    <div class="groups-container">
-        
-        <div class="bg-main flex flex-col items-center justify-items-center">
+        <div class="w-full bg-main flex flex-col items-center justify-items-center">
             <p class="text-white font-nova">Most recent</p>
             <span class="text-white font-nova text-2xl">.</span>
         </div>
@@ -10,7 +8,7 @@
         <% @groups.each do |group| %>
             
                 <li class="w-11/12 bg-white flex flex-row items-start p-3 gap-3 relative ">
-                <img src=<%=group.icon %> class="w-1/4 h-1/4">
+                <img src=<%=group.icon %> class="w-1/4">
                 <div class="flex flex-col gap-5">
                     <%= link_to group.name, group, class: 'text-text font-nova' %>
                     <p class="text-text-m font-extralight font-nova text-sm"> <%= group.created_at.strftime('%d %B %Y') %> </p>
@@ -21,7 +19,4 @@
         <% end %>
         <button class="w-11/12 bg-main text-center p-2 text-white rounded font-nova mt-3 mb-3"> <%= link_to 'New Category', new_group_path %> </button>
         </ul>
-        
-        
-    </div>
 </div>
