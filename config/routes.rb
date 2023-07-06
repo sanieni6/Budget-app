@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # else
   #end
   #root "groups#index"
-  root to: "main#index"
+  root to: "main#index" #splash page
   resources :groups, path: 'category', only: [:index, :show,  :new, :create, :destroy] do
     resources :operations, only: [:index, :new, :create, :destroy]
   end

@@ -23,6 +23,7 @@ module.exports = {
         'text': '#434b54',
         'text-light': '#f5f6f8',
         'text-m': '#86898e',
+        'text-w': '#f5f6f8',
       },
     },
   },

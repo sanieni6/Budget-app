@@ -78,9 +78,11 @@ This is a mobile web application where you can manage your budget: you have a li
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+### Live Demo Link <a name="live-demo-link"></a>
+[Render Link](https://budgetapp-iykk.onrender.com/)
 
 ### Video Demo Link <a name="live-demo-link"></a>
-Comming soon
+[Video Demo Link](https://www.loom.com/share/c845dcdc547a434cba389d742520625a?sid=739afb51-1f3a-44dc-8696-18090e29ecb3)
 
 <!-- GETTING STARTED -->
 
@@ -168,7 +170,8 @@ If you like this project you can give it a star!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to Microverse community for helping me to improve my skills.
+I would like to Microverse community for helping me to improve my skills.<br/>
+Special thanks to https://www.behance.net/gregoirevella for making an awesome design idea.
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
