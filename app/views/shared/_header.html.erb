@@ -1,6 +1,6 @@
-<header class="flex flex-row bg-main w-full p-1 text-white justify-between items-center">
+<header class="flex flex-row bg-main w-full px-2 py-3 text-white justify-between items-center">
 <% if name == 'Categories' %>
-    <img src=<%=asset_path('bar.svg')%> class="w-5 h-5 ml-1">
+    <img src=<%=asset_path('bar.svg')%> class="w-7 h-7 ml-1">
 <% elsif name== 'Transactions' || name == 'New Category' %>
     <%= link_to '', groups_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
 <% elsif name== 'Transactions' || name == 'New Transaction' %>
@@ -8,16 +8,16 @@
 <% else %>
     <%= link_to '',root_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('bar.svg')})" %>
 <% end %>
-<h1 class="font-nova text-lg flex flex-row items-center">
-<img src=<%=asset_path('wallet.svg')%> class="w-5 h-5"><%=name%></h1>
+<h1 class="font-nova text-lg font-thin flex flex-row items-center text-text-w">
+<img src=<%=asset_path('wallet.svg')%> class="w-5 h-5"><%=name.upcase%></h1>
 <% if name == 'LOGIN' %>
-    <%= action.submit "Log in", class:"bg-main text-white rounded p-1 mr-1" %>
+    <%= action.submit "Log in", class:"bg-main text-text-w rounded p-1 mr-1" %>
 <% elsif name == 'REGISTER' %>
-    <%= action.submit "Sign up", class:"bg-main text-white rounded p-1 mr-1" %>  
+    <%= action.submit "Sign up", class:"bg-main text-text-w rounded p-1 mr-1" %>  
 <% elsif name == 'Categories' || name == 'Transactions' %>
-    <img src=<%=asset_path('search.svg')%> class="w-5 h-5">
+    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"font-nova text-text-w"%>
 <% elsif name == 'New Category' || name == 'New Transaction' %>
-    <%= action.submit "Save", class:"bg-main text-white rounded p-1 mr-1" %>
+    <%= action.submit "Save", class:"bg-main text-text-w rounded p-1 mr-1" %>
 <% else %>
     <span class="mr-1"></span>
 <% end %>
