@@ -8,6 +8,6 @@
         <hr class="w-full bg-text">
         <%= form.number_field :amount, required: true, step: '0.01', placeholder:"Amount", class:"w-full border-0 placeholder-text-m" %>
         <hr class="w-full bg-text">
-        <%= form.collection_select :group_id, Group.all, :id, :name %>
+        <%= form.collection_select :group_id, current_user.groups, :id, :name, {prompt: "Select a category"}, class:"w-full border-0 placeholder-text-m text-text-m", required: true %>
     <% end %>
 <% end %>

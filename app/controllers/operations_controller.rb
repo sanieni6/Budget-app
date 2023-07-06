@@ -1,6 +1,7 @@
 class OperationsController < ApplicationController
   def new
     @operation = Operation.new
+    @group = Group.find(params[:group_id])
   end
 
   def create

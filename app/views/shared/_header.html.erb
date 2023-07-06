@@ -1,8 +1,12 @@
 <header class="flex flex-row bg-main w-full p-1 text-white justify-between items-center">
 <% if name == 'Categories' %>
     <img src=<%=asset_path('bar.svg')%> class="w-5 h-5 ml-1">
+<% elsif name== 'Transactions' || name == 'New Category' %>
+    <%= link_to '', groups_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
+<% elsif name== 'Transactions' || name == 'New Transaction' %>
+    <%= link_to '', group_path(@group), class: 'back-image ml-1', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
 <% else %>
-    <%= link_to '', root_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('arrow-small-left.svg')})" %>
+    <%= link_to '',root_path, class: 'back-image ml-1', style: "background-image: url(#{asset_path('bar.svg')})" %>
 <% end %>
 <h1 class="font-nova text-lg flex flex-row items-center">
 <img src=<%=asset_path('wallet.svg')%> class="w-5 h-5"><%=name%></h1>
